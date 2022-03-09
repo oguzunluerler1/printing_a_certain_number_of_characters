@@ -1,0 +1,35 @@
+import java.io.*;
+public class Odev3 {
+    public static void main(String[] args) throws Exception {
+        System.out.println("Dizginizi oluşturmak için...");
+        BufferedReader oku = new BufferedReader (new InputStreamReader(System.in));
+        System.out.print("Adet (çıkış için 0) ve karakter girin: ");
+        String girdi = oku.readLine();
+        String[] elemanlar = girdi.split(" ");
+        String Sonuc = "";
+        int el1 = Integer.parseInt(elemanlar[0]);
+        if (el1 == 0) {
+            System.exit(0);
+        }
+        String string1 = elemanlar[1];
+        Fonk(Sonuc,el1,string1);
+    }
+    static void Fonk(String Sonucc,int el11, String string2) throws Exception {
+        int tolga = el11;
+        while (tolga != 0) {
+            for (int i = 0; i < tolga; i++) {
+                Sonucc = Sonucc+string2;
+            }
+            BufferedReader oku = new BufferedReader (new InputStreamReader(System.in));
+            System.out.println("Oluşan dizgi: " + Sonucc);
+            System.out.print("Adet (çıkış için 0) ve karakter girin: ");
+            String girdi = oku.readLine();
+            String[] elemanlar = girdi.split(" ");
+            tolga = Integer.parseInt(elemanlar[0]);
+            if (elemanlar.length != 1) {
+                string2 = elemanlar[1];
+            }
+        }
+        System.exit(0);
+    }
+}
